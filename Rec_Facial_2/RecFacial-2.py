@@ -1,6 +1,6 @@
 import cv2  # Open-CV
 import mediapipe as mp
-import TensorFlow  as tf
+import tensorflow  as tf
 # inicializar o Open-CV
 
 webcam = cv2.VideoCapture(0)
