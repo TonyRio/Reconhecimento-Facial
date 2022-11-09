@@ -6,4 +6,3 @@ import cv2
 
 ## embeds de face
 
-##boa noite
