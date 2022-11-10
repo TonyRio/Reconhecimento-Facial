@@ -26,6 +26,10 @@ def extrair_face(arquivo, size=(160,160)):
 
     return image
 
+def flip_image(image):
+    img =image.transpose(Image.FLIP_LEFT_RIGHT)
+    return img
+
 
 def load_fotos(directory_src, directory_target):
 
@@ -34,9 +38,15 @@ def load_fotos(directory_src, directory_target):
 
         path_tg = directory_target + filename
 
+        path_tg_flip = directory_target +  "flip-" + filename
+
         try:
             face = extrair_face(path)
+
+            flip = flip_image(face)
             face.save(path_tg, "JPEG", quality=100, optimize=True, progressive=True)
+            flip.save(path_tg_flip, "JPEG", quality=100, optimize=True, progressive=True)
+
         except:
             print("erro na Imagem {}".format(path))
 
