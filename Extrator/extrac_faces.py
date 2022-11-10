@@ -29,8 +29,12 @@ def extrair_face(arquivo, size=(160,160)):
 
 def load_fotos(directory_src, directory_target):
 
-    print(directory_src)
-    print(directory_target)
+    for filename in listdir(directory_src):
+        path = directory_src + filename
+        path_tg = directory_target + filename
+
+        face = extrair_face(path)
+        #face.save(path_tg)
 
 
 def load_dir(directoy_src, directory_target):
