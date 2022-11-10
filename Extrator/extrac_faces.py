@@ -31,13 +31,14 @@ def load_fotos(directory_src, directory_target):
 
     for filename in listdir(directory_src):
         path = directory_src + filename
+
         path_tg = directory_target + filename
 
         face = extrair_face(path)
-        #face.save(path_tg)
+        face.save(path_tg, "JPEG", quality=100, optimize=True, progressive=True)
 
 
-def load_dir(directoy_src, directory_target):
+def load_dir(directoy_src,directory_target):
     for subdir in listdir(directoy_src):
 
         path = directoy_src + subdir + "\\"
@@ -47,8 +48,8 @@ def load_dir(directoy_src, directory_target):
         if not isdir(path):
             continue
 
-        load_fotos(path, path_tg)
+        load_fotos (path, path_tg)
 
 if __name__ == '__main__':
-    load_dir("C:\DATA_SETS\fotos_Tony_Cintia",
-             "C:\DATA_SETS\Faces_family")
+    load_dir("C:\\DATA_SETS\\fotos_Tony_Cintia\\",
+        "C:\\DATA_SETS\\Faces_family\\")
