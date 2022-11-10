@@ -50,5 +50,5 @@ def load_dir(directoy_src, directory_target):
         load_fotos(path, path_tg)
 
 if __name__ == '__main__':
-    load_dir("C:\\programas - TI\\DATA_SETS\\fotos-Tonye Cintia",
-             "C:\\programas - TI\\DATA_SETS\\Faces_family")
+    load_dir("C:\DATA_SETS\fotos_Tony_Cintia",
+             "C:\DATA_SETS\Faces_family")
