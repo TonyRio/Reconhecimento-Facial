@@ -34,9 +34,11 @@ def load_fotos(directory_src, directory_target):
 
         path_tg = directory_target + filename
 
-        face = extrair_face(path)
-        face.save(path_tg, "JPEG", quality=100, optimize=True, progressive=True)
-
+        try:
+            face = extrair_face(path)
+            face.save(path_tg, "JPEG", quality=100, optimize=True, progressive=True)
+        except:
+            print("erro na Imagem {}".format(path))
 
 def load_dir(directoy_src,directory_target):
     for subdir in listdir(directoy_src):
