@@ -20,10 +20,45 @@ def load_face(filename): #, required_size =(160,160)):
 def load_faces(directory_src):
 
     faces = list()
+
 # Iterando arquivos
+
     for filename in listdir(directory_src):
         path = directory_src + filename
 
-        faces.append(load_face(path))
+        try:
+            faces.append(load_face(path))
+        except:
+            print(" *** ERRO na Imagem {} ***".format(path))
 
-        load_face(path)
+    return faces
+
+def load_fotos(directory_src):
+    x, y = list(), list()
+
+    #iterar pastas por classse
+
+    for subdir in listdir(directory_src):
+
+        path= directory_src +subdir
+
+        if not isdir(path):
+            continue
+
+        faces = load_faces(path)
+
+        labels = [subdir for _ in range(len(faces))]
+
+         #Sumarizar o progresso
+
+        print(">Carregadas %d faces da classe: %s " %(len(faces), subdir))
+
+
+        x.extend(faces)
+        y.extend(labels)
+
+    return asarray(x), asarray(y)
+
+#carregando todas as imagens
+
+trainx, trainy = load_fotos(directory_src="C:\\DATA_SETS\\Faces_family_Flip\\")
