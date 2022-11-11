@@ -40,7 +40,7 @@ def load_fotos(directory_src):
 
     for subdir in listdir(directory_src):
 
-        path= directory_src +subdir
+        path= directory_src +subdir +"\\"
 
         if not isdir(path):
             continue
