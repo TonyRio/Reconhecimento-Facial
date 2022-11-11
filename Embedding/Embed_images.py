@@ -3,6 +3,9 @@ from PIL import Image
 from os import listdir
 from os.path import isdir
 from numpy import asarray, expand_dims
+from tensorflow import keras
+from tensorflow import _keras_module
+from tensorflow.keras.models import load_model
 import numpy as np
 
 def load_face(filename): #, required_size =(160,160)):
@@ -62,3 +65,5 @@ def load_fotos(directory_src):
 #carregando todas as imagens
 
 trainx, trainy = load_fotos(directory_src="C:\\DATA_SETS\\Faces_family_Flip\\")
+
+#model = load_model('facenet_keras.h5')
