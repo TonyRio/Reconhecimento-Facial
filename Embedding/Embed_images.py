@@ -23,4 +23,7 @@ def load_faces(directory_src):
 # Iterando arquivos
     for filename in listdir(directory_src):
         path = directory_src + filename
+
+        faces.append(load_face(path))
+
         load_face(path)

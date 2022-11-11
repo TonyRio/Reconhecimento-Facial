@@ -63,7 +63,7 @@ def load_dir(directoy_src,directory_target):
         load_fotos (path, path_tg)
 
 if __name__ == '__main__':
-    load_dir("C:\\DATA_SETS\\fotos_Tony_Cintia\\",
-        "C:\\DATA_SETS\\Faces_family\\")
+    load_dir("C:\\DATA_SETS\\Faces_family\\",
+        "C:\\DATA_SETS\\Faces_family_Flip\\")
 
     ### final
