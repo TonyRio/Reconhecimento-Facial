@@ -67,3 +67,4 @@ def load_fotos(directory_src):
 trainx, trainy = load_fotos(directory_src="C:\\DATA_SETS\\Faces_family_Flip\\")
 
 #model = load_model('facenet_keras.h5')
+#Downgrade 2.8
